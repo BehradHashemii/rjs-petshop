@@ -26,10 +26,10 @@ body {
     ),
 
     radial-gradient(
-      circle at 90% 15%,
-      rgba(255, 180, 120, 0.3) 0px,
-      rgba(255, 180, 120, 0.15) 40px,
-      transparent 110px
+      circle at 100% 0%,
+      rgba(255, 180, 120, 0.5) 10px,
+      rgba(255, 180, 120, 0.25) 60px,
+      transparent 150px
     ),
 
     radial-gradient(

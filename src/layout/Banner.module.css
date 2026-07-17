@@ -22,8 +22,10 @@
 }
 
 .badge {
-  display: inline-block;
-  padding: 8px 14px;
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+  padding: 3px 14px;
   margin-bottom: 20px;
   color: #f7763d;
   font-size: 13px;
@@ -31,6 +33,10 @@
   background: rgba(247, 118, 61, 0.1);
   border: 1px solid rgba(247, 118, 61, 0.2);
   border-radius: 30px;
+}
+.badge:nth-child(2) {
+  margin: auto;
+  margin: 0 auto;
 }
 
 .main h1 {
@@ -57,42 +63,6 @@
   color: #76584b;
   font-size: 15px;
   line-height: 2;
-}
-
-.shopButton {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 8px 8px 8px 18px;
-  color: white;
-  background: linear-gradient(135deg, #f7763d, #ff9a6c);
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
-  box-shadow: 0 10px 25px rgba(247, 118, 61, 0.3);
-  transition: all 0.3s ease;
-}
-
-.shopButton:hover {
-  transform: translateY(-4px);
-
-  box-shadow: 0 15px 30px rgba(247, 118, 61, 0.4);
-}
-
-.shopButton span:first-child {
-  font-size: 14px;
-}
-
-.arrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 34px;
-  height: 34px;
-  color: #f7763d;
-  background: white;
-  border-radius: 50%;
-  font-size: 20px;
 }
 
 .techLogo {
@@ -204,5 +174,39 @@
 
   .html {
     top: 48%;
+  }
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: #f7763d;
+  border-radius: 50%;
+  margin-left: 20px;
+  position: relative;
+}
+
+.dot::before,
+.dot::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.dot::after {
+  animation-delay: 1s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
   }
 }
