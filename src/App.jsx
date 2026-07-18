@@ -6,12 +6,14 @@ import Header from "./layout/Header";
 import Footer from "./layout/Footer";
 
 import "./App.css";
+import BackgroundDots from "./components/BackgroundDots";
 
 function App() {
   const loggedUser = false;
   return (
     <>
-      <Header loggedUser={loggedUser}/>
+      {/* <BackgroundDots /> */}
+      <Header loggedUser={loggedUser} />
       <Router />
       <Footer />
     </>

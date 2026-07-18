@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import styles from "./Banner.module.css";
 import { IoIosArrowBack } from "react-icons/io";
 import reactIcon from "../assets/images/react.svg";
@@ -9,7 +8,7 @@ import sassIcon from "../assets/images/sass.svg";
 import Button from "../components/Button";
 
 function Banner() {
-  const navigate = useNavigate();
+  
 
   return (
     <section className={`${styles.banner} glassBG`}>
@@ -27,11 +26,14 @@ function Banner() {
         </h1>
 
         <p>
-          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
-          استفاده از طراحان گرافیک است.
+          طراحی و توسعه وبسایت های نسل جدید با قدرتمندترین ابزار های فرانت‌اند؛خلق پلتفرم های مقیاس پذیر،پرسرعت و متناسب با نیاز های آینده
         </p>
 
-        <Button title="همین حالا اقدام کنید" icon={<IoIosArrowBack />} link="contact-us"></Button>
+        <Button
+          title="همین حالا اقدام کنید"
+          icon={<IoIosArrowBack />}
+          link="contact-us"
+        ></Button>
       </main>
       <aside className={`${styles.aside}`}>
         <div className={`${styles.techLogo} ${styles.react} glassBG`}>

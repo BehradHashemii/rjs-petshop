@@ -6,7 +6,6 @@ import Header from "../layout/Header";
 function Router() {
   return (
     <>
-      
       <Routes>
         <Route element={<HomePage />} path="/"></Route>
       </Routes>

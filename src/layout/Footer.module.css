@@ -1,0 +1,185 @@
+.footer {
+  position: relative;
+  padding: 18px 24px;
+  margin: 100px auto 10px;
+  @media (max-width: 768px) {
+    width: 92%;
+    padding: 20px;
+  }
+}
+
+.footerContainer {
+  display: grid;
+
+  grid-template-columns:
+    1.5fr
+    1fr
+    1fr
+    1.5fr;
+
+  gap: 60px;
+
+  max-width: 1400px;
+
+  margin: 0 auto;
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  };
+  
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+}
+
+/* Brand */
+
+.brand h2 {
+  margin: 0 0 15px;
+
+  color: #3a2117;
+
+  font-size: 32px;
+  font-weight: 900;
+}
+
+.brand h2 span {
+  color: #f7763d;
+}
+
+.brand p {
+  color: #76584b;
+
+  font-size: 14px;
+
+  line-height: 2;
+}
+
+.socials {
+  display: flex;
+
+  gap: 12px;
+
+  margin-top: 25px;
+}
+
+.socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  color: #f7763d;
+
+  background: rgba(247, 118, 61, 0.08);
+
+  border: 1px solid rgba(247, 118, 61, 0.15);
+
+  border-radius: 12px;
+
+  transition: all 0.3s ease;
+}
+
+.socials a:hover {
+  color: white;
+
+  background: #f7763d;
+
+  transform: translateY(-4px);
+
+  box-shadow: 0 8px 20px rgba(247, 118, 61, 0.25);
+}
+
+.column,
+.contact {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+.column h3,
+.contact h3 {
+  margin: 0 0 12px;
+
+  color: #3a2117;
+
+  font-size: 17px;
+}
+
+.column a {
+  width: fit-content;
+
+  color: #76584b;
+
+  font-size: 14px;
+
+  text-decoration: none;
+
+  transition: all 0.3s ease;
+}
+
+.column a:hover {
+  color: #f7763d;
+
+  transform: translateX(-5px);
+}
+
+/* Contact */
+
+.contact p {
+  margin: 0;
+
+  color: #76584b;
+
+  font-size: 14px;
+
+  line-height: 2;
+}
+
+.email {
+  width: fit-content;
+
+  color: #f7763d;
+
+  font-weight: 600;
+
+  text-decoration: none;
+}
+
+/* Bottom */
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  max-width: 1400px;
+
+  margin: 60px auto 0;
+  padding-top: 20px;
+
+  border-top: 1px solid rgba(118, 88, 75, 0.12);
+}
+
+.bottom p {
+  margin: 0;
+
+  color: #987b6e;
+
+  font-size: 13px;
+}
+
+@media (max-width: 600px) {
+  .bottom {
+    flex-direction: column;
+
+    gap: 10px;
+
+    text-align: center;
+  }
+}
