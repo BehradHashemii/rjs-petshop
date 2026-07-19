@@ -1,8 +1,7 @@
 .container {
   position: relative;
   width: 100%;
-  min-height: 480px;
-  margin: 0 auto;
+  margin: 50px auto ;
 }
 
 .card {
@@ -117,7 +116,6 @@
 .swiperButtons .navigation {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 :global(.swiper-button-disabled) {
@@ -125,8 +123,8 @@
   pointer-events: none;
 }
 
-:global(.scroll-swiper-button-prev),
-:global(.scroll-swiper-button-next) {
+:global(.scroll-portfolio-button-prev),
+:global(.scroll-portfolio-button-next) {
   width: 48px;
   height: 48px;
   display: flex;
@@ -146,14 +144,14 @@
   transition: all 0.3s ease;
 }
 
-:global(.scroll-swiper-button-prev svg),
-:global(.scroll-swiper-button-next svg) {
+:global(.scroll-portfolio-button-prev svg),
+:global(.scroll-portfolio-button-next svg) {
   color: #f7763d !important;
   transition: transform 0.3s ease;
 }
 
-:global(.scroll-swiper-button-prev:hover),
-:global(.scroll-swiper-button-next:hover) {
+:global(.scroll-portfolio-button-prev:hover),
+:global(.scroll-portfolio-button-next:hover) {
   background: rgba(247, 118, 61, 0.12);
 
   border-color: rgba(247, 118, 61, 0.5);
