@@ -12,7 +12,7 @@ function App() {
   const loggedUser = false;
   return (
     <>
-      {/* <BackgroundDots /> */}
+      <BackgroundDots />
       <Header loggedUser={loggedUser} />
       <Router />
       <Footer />
