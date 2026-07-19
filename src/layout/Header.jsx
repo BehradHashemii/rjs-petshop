@@ -98,7 +98,7 @@ function Header({ loggedUser }) {
             <NavLink to="/">خانه</NavLink>
           </li>
           <li>
-            <NavLink to="/shop">فروشگاه</NavLink>
+            <NavLink to="/portfolios">نمونه کار</NavLink>
           </li>
           <li>
             <NavLink to="/articles">مقالات</NavLink>
