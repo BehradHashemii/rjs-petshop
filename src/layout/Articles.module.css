@@ -1,8 +1,7 @@
 .container {
   position: relative;
   width: 100%;
-  min-height: 480px;
-  margin: 50px auto 0;
+  margin: 0px auto 50px;
 }
 
 .card {
@@ -57,18 +56,15 @@
   margin: 15px 0;
   line-height: 1.5;
 }
+
 .desc {
   font-size: 14px;
   color: #667085 !important;
-
   padding: 12px 16px;
-
   line-height: 1.6;
-
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-
   overflow: hidden;
   white-space: normal;
   text-overflow: ellipsis;
@@ -80,6 +76,7 @@
   color: inherit;
   pointer-events: none;
 }
+
 .link {
   display: flex;
   justify-content: space-between;
