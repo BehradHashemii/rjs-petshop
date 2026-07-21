@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <ScrollToTop />
-      <BackgroundDots />
+      {/* <BackgroundDots /> */}
       <Header loggedUser={loggedUser} />
       <Router />
       <Footer />

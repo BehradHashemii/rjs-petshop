@@ -7,7 +7,7 @@ import Portfolios from "../layout/Portfolios";
 function HomePage() {
   return (
     <div>
-      <Banner></Banner>
+      <Banner />
       <Carts />
       <Portfolios />
       <Articles />
