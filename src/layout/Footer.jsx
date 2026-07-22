@@ -4,7 +4,7 @@ import {
   FaGithub,
   FaLinkedinIn,
 } from "react-icons/fa";
-
+import e2p from "../utils/persianNumber";
 import styles from "./Footer.module.css";
 
 function Footer() {
@@ -21,11 +21,17 @@ function Footer() {
             هر روز بهتر از دیروز.
           </p>
           <div className={styles.socials}>
-            <a href="https://instagram.com/behradhashemii" aria-label="Instagram">
+            <a
+              href="https://instagram.com/behradhashemii"
+              aria-label="Instagram"
+            >
               <FaInstagram />
             </a>
 
-            <a href="https://t.me/behradhashemii?text=سلام." aria-label="Telegram">
+            <a
+              href="https://t.me/behradhashemii?text=سلام."
+              aria-label="Telegram"
+            >
               <FaTelegramPlane />
             </a>
 
@@ -38,14 +44,12 @@ function Footer() {
             </a>
           </div>
         </div>
-
-        {/* Quick Links */}
         <div className={styles.column}>
           <h3>دسترسی سریع</h3>
 
           <a href="/">خانه</a>
-          <a href="/blogs">مقالات</a>
-          <a href="/projects">نمونه کارها</a>
+          <a href="/articles">مقالات</a>
+          <a href="/portfolios">نمونه کارها</a>
           <a href="/contact">ارتباط با من</a>
         </div>
 
@@ -69,25 +73,17 @@ function Footer() {
             درباره‌اش صحبت کنیم.
           </p>
 
-          <a
-            href="mailto:your@email.com"
-            className={styles.email}
-          >
-            your@email.com
+          <a href="mailto:behradhashemi1386@email.com" className={styles.email}>
+            behradhashemi1386@email.com
           </a>
         </div>
-
       </div>
-
-      {/* Bottom */}
       <div className={styles.bottom}>
         <p>
-          © {new Date().getFullYear()} تمامی حقوق محفوظ است.
+          © {e2p(2020)} - {e2p(new Date().getFullYear())} تمامی حقوق محفوظ است.
         </p>
 
-        <p>
-          ساخته شده با ❤️ و React
-        </p>
+        <p>ساخته شده با ❤️</p>
       </div>
     </footer>
   );
