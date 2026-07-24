@@ -6,17 +6,15 @@ import Router from "./routes/Router";
 import Footer from "./layout/Footer";
 
 import ScrollToTop from "./components/ScrollToTop";
-import BackgroundDots from "./components/BackgroundDots";
+// import BackgroundDots from "./components/BackgroundDots";
 
 import "./App.css";
 
 function App() {
-  const loggedUser = false;
   return (
     <>
       <ScrollToTop />
-      {/* <BackgroundDots /> */}
-      <Header loggedUser={loggedUser} />
+      <Header />
       <Router />
       <Footer />
     </>

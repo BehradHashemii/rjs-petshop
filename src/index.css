@@ -34,7 +34,7 @@
   --bg-radial: rgba(247, 118, 61, 0.08);
 
   /* Glassmorphism System */
-  --glass-bg: rgba(255, 255, 255, 0.92);
+  --glass-bg: rgba(255, 255, 255, 0.2);
   --glass-bg-card: #ffffff;
   --glass-border: rgba(226, 232, 240, 0.8);
   --glass-border-subtle: rgba(226, 232, 240, 0.5);
@@ -98,7 +98,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Vazirmatn", "YekanBakh", "YekanBakh Regular", system-ui, -apple-system, sans-serif !important;
-  -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -110,21 +109,13 @@ html {
 
 body {
   width: 100%;
-  max-width: var(--container-max-width);
+  max-width: 1400px;
   min-width: 320px;
   min-height: 100vh;
   margin: 0 auto;
   padding: 0 5px;
   position: relative;
   overflow-x: hidden;
-  color: var(--text-primary);
-  background:
-    radial-gradient(
-      circle at 10% 20%,
-      var(--bg-radial),
-      transparent 35%
-    ),
-    var(--bg-color);
 }
 
 a {
@@ -138,7 +129,6 @@ button {
   touch-action: manipulation;
 }
 
-/* Common Layout Utilities */
 .center {
   display: flex;
   flex-direction: column;
@@ -155,7 +145,7 @@ button {
 
 .glassBG {
   background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
+  backdrop-filter: blur(18px) saturate(180%);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-xl);
   box-shadow: var(--glass-shadow);
@@ -164,11 +154,4 @@ button {
 .active {
   background: var(--primary-soft);
   color: var(--primary-color) !important;
-}
-
-/* Scroll Triggered Animations Disabled for Performance */
-.scroll-reveal {
-  opacity: 1 !important;
-  transform: none !important;
-  transition: none !important;
 }
