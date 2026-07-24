@@ -185,31 +185,39 @@
 }
 
 .actionsBtn {
-  text-align: center !important;
+  /* 
   display: flex;
   align-items: center;
   gap: 0.5rem;
   padding: 0.6rem 1.2rem;
-  border: none;
-  border-radius: 8px;
   cursor: pointer;
   font-size: 0.9rem;
   transition: all 0.3s ease;
+   */
+
+  display: flex;
+  align-items: center;
+  text-align: center !important;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 15px;
   white-space: nowrap;
+  cursor: pointer;
+  border: 1px solid rgba(247, 118, 61, 0.5);
+  background: rgba(247, 118, 61, 0.85);
+  color: #fff;
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.5);
 }
 
 .favNotActive {
   background: #fff;
-  color: #666;
-  border: 1px solid #e9ecef;
-  outline: none;
+  color: #f7763d;
 }
 
 .favActive {
   background: #fff;
-  color: #dc3545;
-  border: none;
-  outline: none;
+  color: #f7763d;
 }
 
 .copyBtn {
@@ -220,7 +228,6 @@
 .back {
   background: #f7763d;
   color: #fff;
-  border-radius: 5px;
 }
 
 .actionsBtn svg {

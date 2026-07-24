@@ -33,19 +33,6 @@
   --bg-surface: #ffffff;
   --bg-radial: rgba(247, 118, 61, 0.08);
 
-  /* Glassmorphism System */
-  --glass-bg: rgba(255, 255, 255, 0.2);
-  --glass-bg-card: #ffffff;
-  --glass-border: rgba(226, 232, 240, 0.8);
-  --glass-border-subtle: rgba(226, 232, 240, 0.5);
-  --glass-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-  --glass-blur: none;
-
-  /* White Glass Scale */
-  --white-glass: rgba(255, 255, 255, 0.72);
-  --white-glass-light: rgba(255, 255, 255, 0.42);
-  --white-border: rgba(255, 255, 255, 0.85);
-
   /* Border Radius Token Scale */
   --radius-xs: 6px;
   --radius-sm: 10px;
@@ -71,7 +58,8 @@
 
 @font-face {
   font-family: "YekanBakh";
-  src: url("./assets/fonts/YekanBakh-Regular/YekanBakh-Regular.ttf") format("truetype");
+  src: url("./assets/fonts/YekanBakh-Regular/YekanBakh-Regular.ttf")
+    format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -79,7 +67,8 @@
 
 @font-face {
   font-family: "YekanBakh";
-  src: url("./assets/fonts/YekanBakh-Medium/YekanBakh-Medium.ttf") format("truetype");
+  src: url("./assets/fonts/YekanBakh-Medium/YekanBakh-Medium.ttf")
+    format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -87,17 +76,26 @@
 
 @font-face {
   font-family: "YekanBakh";
-  src: url("./assets/fonts/YekanBakh-Bold/@font-face/41e49eab42867016423011dccc96c22a.ttf") format("truetype");
+  src: url("./assets/fonts/YekanBakh-Bold/@font-face/41e49eab42867016423011dccc96c22a.ttf")
+    format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Vazirmatn", "YekanBakh", "YekanBakh Regular", system-ui, -apple-system, sans-serif !important;
+  font-family:
+    "Vazirmatn",
+    "YekanBakh",
+    "YekanBakh Regular",
+    system-ui,
+    -apple-system,
+    sans-serif !important;
 }
 
 html {
@@ -144,11 +142,13 @@ button {
 }
 
 .glassBG {
-  background: var(--glass-bg);
+  background: rgba(255, 255, 255, 0.45);
   backdrop-filter: blur(18px) saturate(180%);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--glass-shadow);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow:
+    0 8px 32px rgba(31, 38, 135, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  border-radius: 24px;
 }
 
 .active {

@@ -6,7 +6,6 @@ import Router from "./routes/Router";
 import Footer from "./layout/Footer";
 
 import ScrollToTop from "./components/ScrollToTop";
-// import BackgroundDots from "./components/BackgroundDots";
 
 import "./App.css";
 

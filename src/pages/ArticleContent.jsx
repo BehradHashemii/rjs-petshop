@@ -84,7 +84,7 @@ function ArticleContent({ article, styles, contentRef }) {
             >
               {isLiked ? (
                 <>
-                  <FaHeart color="#ef4444" />
+                  <FaHeart />
                   <span>مقاله پسندیده شد</span>
                 </>
               ) : (

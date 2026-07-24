@@ -1,10 +1,33 @@
-import React from "react";
-import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
+import { FaBookmark, FaExternalLinkAlt, FaGithub, FaRegBookmark } from "react-icons/fa";
 import { FiArrowUpLeft } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import Button from "./Button";
 import styles from "./PortfolioCard.module.css";
+import { isPortfolioSaved, toggleSavePortfolio } from "../utils/storage";
+
 function PortfolioCard({ portfolio }) {
+  const [saved, setSaved] = useState(() => isPortfolioSaved(portfolio?.id));
+
+  useEffect(() => {
+    const handleSavedChange = () => {
+      setSaved(isPortfolioSaved(portfolio?.id));
+    };
+
+    window.addEventListener("portfolio-saved-change", handleSavedChange);
+    return () => {
+      window.removeEventListener("portfolio-saved-change", handleSavedChange);
+    };
+  }, [portfolio?.id]);
+
+  const handleSaveClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!portfolio?.id) return;
+    const updated = toggleSavePortfolio(portfolio.id);
+    setSaved(updated.includes(portfolio.id));
+  };
+
   return (
     <article className={styles.card}>
       <div className={styles.imageWrapper}>
@@ -30,6 +53,27 @@ function PortfolioCard({ portfolio }) {
         </div>
 
         <div className={styles.footer}>
+          <div className={styles.saveStatusLabel}>
+            <button
+              type="button"
+              onClick={handleSaveClick}
+              className={styles.saveBtn}
+              aria-label={saved ? "حذف از ذخیره‌ها" : "ذخیره نمونه‌کار"}
+            >
+              {saved ? (
+                <>
+                  <FaBookmark />
+                  <span>ذخیره شده</span>
+                </>
+              ) : (
+                <>
+                  <FaRegBookmark />
+                  <span>ذخیره نمونه‌کار</span>
+                </>
+              )}
+            </button>
+          </div>
+
           <div className={styles.links}>
             {portfolio.liveUrl && (
               <a
@@ -37,6 +81,7 @@ function PortfolioCard({ portfolio }) {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="مشاهده پروژه"
+                title="پیش‌نمایش آنلاین"
               >
                 <FaExternalLinkAlt />
               </a>
@@ -48,6 +93,7 @@ function PortfolioCard({ portfolio }) {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="مشاهده گیت‌هاب"
+                title="سورس کد گیت‌هاب"
               >
                 <FaGithub />
               </a>

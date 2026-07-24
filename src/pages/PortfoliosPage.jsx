@@ -107,7 +107,7 @@ function PortfoliosPage() {
       </section>
       <section className={styles.portfoliosGrid}>
         {paginatedData.length > 0 ? (
-          paginatedData.map((item) => <PortfolioCard portfolio={item} />)
+          paginatedData.map((item) => <PortfolioCard portfolio={item} key={item.id}/>)
         ) : (
           <div className={`${styles.emptyState} glassBG`}>
             <p>پروژه‌ای با این مشخصات یافت نشد.</p>
