@@ -3,7 +3,7 @@ import Banner from "../layout/Banner";
 import Carts from "../layout/Carts";
 import Articles from "../layout/Articles";
 import Portfolios from "../layout/Portfolios";
-import Hero from "../Layout/Hero";
+import Hero from "../layout/Hero";
 import SkillsSection from "../layout/SkillsSection";
 import CTASection from "../layout/CTASection";
 import Contact from "../components/Contact";
