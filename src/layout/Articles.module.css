@@ -210,15 +210,41 @@
   box-shadow: 0 0 10px rgba(247, 118, 61, 0.4);
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 1024px) {
   .container {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding: 0 20px;
   }
 }
 
-@media (width <= 480px) {
-  .title {
-    height: 40px;
+@media (max-width: 600px) {
+  .container {
+    margin: 50px auto;
+  }
+
+  .header {
+    gap: 18px;
+  }
+
+  .header h2 {
+    font-size: 21px;
+  }
+
+  .imageWrapper {
+    height: 180px;
+  }
+}
+
+@media (max-width: 420px) {
+  .header {
+    flex-direction: column;    
+    align-items: flex-start;
+  }
+
+  .card {
+    min-height: 420px;
+  }
+
+  .content h3 {
+    font-size: 18px;
   }
 }

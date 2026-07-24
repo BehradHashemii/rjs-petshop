@@ -32,18 +32,18 @@ function Header({ loggedUser }) {
         <div className={styles.links}>
           <Badge badgeContent={e2p(0)} color="warning">
             <Link to="/cart">
-              <CiShoppingCart color="#fff"style={{ fontSize: "1.5rem" }} />
+              <CiShoppingCart color="#fff" style={{ fontSize: "1.5rem" }} />
             </Link>
           </Badge>
 
           <Badge badgeContent={e2p(0)} color="warning">
             <Link to="/favorites">
-              <IoIosHeartEmpty color="#fff"style={{ fontSize: "1.5rem" }} />
+              <IoIosHeartEmpty color="#fff" style={{ fontSize: "1.5rem" }} />
             </Link>
           </Badge>
 
           <Link to={loggedUser ? "/dashboard" : "/login"}>
-            <IoPersonOutline color="#fff"style={{ fontSize: "1.5rem" }} />
+            <IoPersonOutline color="#fff" style={{ fontSize: "1.5rem" }} />
           </Link>
         </div>
 
@@ -82,10 +82,10 @@ function Header({ loggedUser }) {
             <NavLink to="/articles">مقالات</NavLink>
           </li>
           <li>
-            <NavLink to="/contact-us">تماس با ما</NavLink>
+            <NavLink to="/contact">ارتباط با من</NavLink>
           </li>
           <li>
-            <NavLink to="/about-us">درباره ما</NavLink>
+            <NavLink to="/about-us">درباره من </NavLink>
           </li>
         </ul>
 

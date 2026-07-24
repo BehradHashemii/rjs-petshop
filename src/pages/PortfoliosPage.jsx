@@ -19,11 +19,8 @@ function PortfoliosPage() {
 
   useEffect(() => {
     setIsLoading(true);
-    const timer = setTimeout(() => {
-      setPortfolios(portfoliosData.portfolios || []);
-      setIsLoading(false);
-    }, 800);
-    return () => clearTimeout(timer);
+    setPortfolios(portfoliosData.portfolios || []);
+    setIsLoading(false);
   }, []);
 
   const uniqueCategories = useMemo(() => {

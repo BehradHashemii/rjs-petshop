@@ -31,7 +31,7 @@ function Banner() {
         <Button
           title="همین حالا اقدام کنید"
           icon={<IoIosArrowBack />}
-          link="contact-us"
+          link="contact"
         ></Button>
       </main>
       <aside className={`${styles.aside}`}>

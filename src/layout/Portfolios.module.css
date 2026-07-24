@@ -169,8 +169,6 @@
   }
 
   .header {
-    align-items: flex-start;
-
     gap: 18px;
   }
 
@@ -186,6 +184,7 @@
 @media (max-width: 420px) {
   .header {
     flex-direction: column;
+    align-items: flex-start;
   }
 
   .card {

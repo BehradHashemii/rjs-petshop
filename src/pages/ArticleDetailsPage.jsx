@@ -21,48 +21,40 @@ function ArticleDetailsPage() {
   useEffect(() => {
     setIsLoading(true);
 
-    const timer = setTimeout(() => {
-      const articles = articlesData.articles || [];
+    const articles = articlesData.articles || [];
 
-      const foundArticle = articles.find(
-        (item) => item.slug === slug,
-      );
+    const foundArticle = articles.find((item) => item.slug === slug);
 
-      if (!foundArticle) {
-        setArticle(null);
-        setRelatedArticles([]);
-        setIsLoading(false);
-        return;
-      }
-
-      const currentTags =
-        foundArticle.tags
-          ?.split(",")
-          .map((tag) => tag.trim())
-          .filter(Boolean) || [];
-
-      const related = articles
-        .filter((item) => {
-          if (item.id === foundArticle.id) return false;
-
-          const articleTags =
-            item.tags
-              ?.split(",")
-              .map((tag) => tag.trim())
-              .filter(Boolean) || [];
-
-          return articleTags.some((tag) =>
-            currentTags.includes(tag),
-          );
-        })
-        .slice(0, 4);
-
-      setArticle(foundArticle);
-      setRelatedArticles(related);
+    if (!foundArticle) {
+      setArticle(null);
+      setRelatedArticles([]);
       setIsLoading(false);
-    }, 500);
+      return;
+    }
 
-    return () => clearTimeout(timer);
+    const currentTags =
+      foundArticle.tags
+        ?.split(",")
+        .map((tag) => tag.trim())
+        .filter(Boolean) || [];
+
+    const related = articles
+      .filter((item) => {
+        if (item.id === foundArticle.id) return false;
+
+        const articleTags =
+          item.tags
+            ?.split(",")
+            .map((tag) => tag.trim())
+            .filter(Boolean) || [];
+
+        return articleTags.some((tag) => currentTags.includes(tag));
+      })
+      .slice(0, 4);
+
+    setArticle(foundArticle);
+    setRelatedArticles(related);
+    setIsLoading(false);
   }, [slug]);
 
   if (isLoading) {
@@ -81,10 +73,7 @@ function ArticleDetailsPage() {
         contentRef={contentRef}
       />
 
-      <ArticleRelated
-        relatedArticles={relatedArticles}
-        styles={styles}
-      />
+      <ArticleRelated relatedArticles={relatedArticles} styles={styles} />
     </div>
   );
 }

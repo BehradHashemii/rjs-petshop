@@ -202,11 +202,14 @@
   background: #fff;
   color: #666;
   border: 1px solid #e9ecef;
+  outline: none;
 }
 
 .favActive {
   background: #fff;
   color: #dc3545;
+  border: none;
+  outline: none;
 }
 
 .copyBtn {

@@ -8,7 +8,7 @@ import styles from "./PortfoliosPage.module.css";
 import ArticleCard from "../components/ArticleCard";
 import e2p from "../utils/persianNumber";
 
-const ITEMS_PER_PAGE = 9;
+const ITEMS_PER_PAGE = 8;
 
 function ArticlesPage() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -24,12 +24,8 @@ function ArticlesPage() {
   useEffect(() => {
     setIsLoading(true);
 
-    const timer = setTimeout(() => {
-      setArticles(articlesData.articles || []);
-      setIsLoading(false);
-    }, 800);
-
-    return () => clearTimeout(timer);
+    setArticles(articlesData.articles || []);
+    setIsLoading(false);
   }, []);
 
   const uniqueCategories = useMemo(() => {

@@ -1,12 +1,11 @@
 .Carts {
-  position: relative;
+  margin: 20px auto;
+  padding: 36px 32px;
+  width: 100%;
   z-index: 2;
-
-  width: min(1150px, 90%);
-
-  margin: 0 auto;
-
-  padding: 70px 0;
+  @media (max-width: 899px) {
+    width: calc(100% - 24px);
+  }
 }
 
 /* Header */
