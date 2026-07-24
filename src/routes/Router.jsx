@@ -5,6 +5,7 @@ import Portfolios from "../layout/Portfolios";
 import PortfoliosPage from "../pages/PortfoliosPage";
 import ArticlesPage from "../pages/ArticlesPage";
 import ArticleDetailsPage from "../pages/ArticleDetailsPage";
+import SavedPage from "../pages/SavedPage";
 
 function Router() {
   return (
@@ -13,6 +14,7 @@ function Router() {
       <Route element={<PortfoliosPage />} path="/portfolios" />
       <Route element={<ArticlesPage />} path="/articles" />
       <Route path="/articles/:slug" element={<ArticleDetailsPage />} />
+      <Route path="/saved" element={<SavedPage />} />
     </Routes>
   );
 }

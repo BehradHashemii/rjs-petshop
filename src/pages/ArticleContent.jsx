@@ -2,16 +2,32 @@ import { Link } from "react-router-dom";
 import formatPersianDate from "../utils/formatPersianDate";
 import { FcDislike, FcLike } from "react-icons/fc";
 import { FaCopy, FaHeart, FaRegHeart } from "react-icons/fa";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { isArticleLiked, toggleLikeArticle } from "../utils/storage";
 
 function ArticleContent({ article, styles, contentRef }) {
-  const [isFavorite, setIsFavorite] = useState(false);
-  const toggleFavorite = () => {
-    setIsFavorite((isFavorite) => !isFavorite);
+  const [isLiked, setIsLiked] = useState(() => isArticleLiked(article?.id));
+  const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    const handleLikedChange = () => {
+      setIsLiked(isArticleLiked(article?.id));
+    };
+
+    window.addEventListener("article-liked-change", handleLikedChange);
+    return () => {
+      window.removeEventListener("article-liked-change", handleLikedChange);
+    };
+  }, [article?.id]);
+
+  const handleToggleLike = () => {
+    if (!article?.id) return;
+    const updatedList = toggleLikeArticle(article.id);
+    setIsLiked(updatedList.includes(article.id));
   };
   const shortenLink = () => {
-    navigator.clipboard.writeText(location.href)
-  }
+    navigator.clipboard.writeText(location.href);
+  };
   return (
     <article className={`${styles.articleContainer}`}>
       <h1>{article?.title}</h1>
@@ -62,21 +78,19 @@ function ArticleContent({ article, styles, contentRef }) {
           ></section>
           <div className={styles.actions}>
             <button
-              onClick={toggleFavorite}
-              className={`${isFavorite ? styles.favActive : styles.favNotActive} ${styles.actionsBtn}`}
-              aria-label={
-                isFavorite ? "حذف از علاقه‌مندی‌ها" : "افزودن به علاقه‌مندی‌ها"
-              }
+              onClick={handleToggleLike}
+              className={`${isLiked ? styles.favActive : styles.favNotActive} ${styles.actionsBtn}`}
+              aria-label={isLiked ? "حذف از پسندیده‌ها" : "پسندیدن مقاله"}
             >
-              {isFavorite ? (
+              {isLiked ? (
                 <>
-                  <FaHeart color="#ff0000" />
-                  <span>حذف از علاقه‌مندی‌ها</span>
+                  <FaHeart color="#ef4444" />
+                  <span>مقاله پسندیده شد</span>
                 </>
               ) : (
                 <>
                   <FaRegHeart />
-                  <span>افزودن به علاقه‌مندی‌ها</span>
+                  <span>پسندیدن مقاله</span>
                 </>
               )}
             </button>
